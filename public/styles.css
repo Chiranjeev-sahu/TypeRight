@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    background-color: #000; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  #timer {
+    color: #ffffff; 
+    font-size: 20px; 
+    display: flex;
+    justify-content: right;
+  }
+  
+  
+  .glowing-container {
+    background-color: #222; 
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 20px 5px hsla(180, 72%, 89%, 0.8); 
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+  }
+  #startbutton {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: 45%;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* White text */
+    background: linear-gradient(135deg, #246d83, #2fb1b1); 
+    border-radius: 8px; /* Rounded edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(47, 177, 177, 0.8); 
+    cursor: pointer;
+    transition:  0.2s ease, box-shadow 0.3s ease;
+}
+
+#startbutton:hover {
+    transform: scale(1.05); /* Slightly enlarges on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 0 20px rgba(47, 177, 177, 1); /* More intense glow */
+}
+
+#startbutton:active {
+    transform: scale(0.95); /* Shrinks slightly on click */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 0 12px rgba(47, 177, 177, 0.8); /* Subtle shadow change */
+}
+
+  .text-input {
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 40px 20px 16px 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .text-input input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .charts {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-inline: 16px;
+    margin-block: 16px;
+  }
+
+  .chart {
+    background-color: #333; /* Chart area background */
+    border-radius: 5px;
+    width: 48%; 
+    height: 230px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; 
+  }
