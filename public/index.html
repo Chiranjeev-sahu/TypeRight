@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Typing App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="glowing-container">
         <div id="timer">
-            <button onclick="startTyping()" id="startbutton">Start</button>
-            <span>Time:60s</span>
+            <button id="startbutton">Start</button>
         </div>
-        <div class="text-input">
-            <input type="text" placeholder="Press 'Start'">
+        <div class="typing-container">
+            <p id="words-container"></p>
+            <input type="text" placeholder="" id="inptarea" disabled>
         </div>
         <div class="charts">
             <div class="chart">Chart 1</div>
             <div class="chart">Chart 2</div>
         </div>
     </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
