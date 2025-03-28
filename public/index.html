@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Typing App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypeRight</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -12,17 +12,17 @@
       <button id="startbutton">Start</button>
     </div>
 
-    <!-- Stacked layout for reference text & input -->
     <div class="typing-container">
       <p id="words-container"></p>
       <input type="text" id="inptarea" placeholder="" disabled />
     </div>
 
     <div class="charts">
-      <div class="chart">Chart 1</div>
-      
+      <canvas id="chart" class="chart"></canvas>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+ 
