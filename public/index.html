@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing App</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Typing App</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="glowing-container">
-        <div id="timer">
-            <button id="startbutton">Start</button>
-        </div>
-        <div class="typing-container">
-            <p id="words-container"></p>
-            <input type="text" placeholder="" id="inptarea" disabled>
-        </div>
-        <div class="charts">
-            <div class="chart">Chart 1</div>
-            <div class="chart">Chart 2</div>
-        </div>
+  <div class="glowing-container">
+    <div id="timer">
+      <button id="startbutton">Start</button>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Stacked layout for reference text & input -->
+    <div class="typing-container">
+      <p id="words-container"></p>
+      <input type="text" id="inptarea" placeholder="" disabled />
+    </div>
+
+    <div class="charts">
+      <div class="chart">Chart 1</div>
+      
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
