@@ -23,18 +23,10 @@ const TypeRight = {
   },
 
   async getSentence() {
-    try {
-      const response1 = await fetch("https://cors-anywhere.herokuapp.com/https://api.quotable.io/random");
-      const data1 = await response1.json();
-
-      const response2 = await fetch("https://cors-anywhere.herokuapp.com/https://api.quotable.io/random");
-      const data2 = await response2.json();
-      return `${data1.content} ${data2.content}`;
-    } catch (error) {
-      console.error("Error fetching sentence:", error);
-      return "Failed to fetch a sentence. Please try again.";
-    }
+    const randomIndex = Math.floor(Math.random() * sentences.length);
+    return sentences[randomIndex];
   },
+  
 
   async startSession() {
     this.originalSentence = await this.getSentence();
