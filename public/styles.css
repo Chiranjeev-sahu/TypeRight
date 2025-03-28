@@ -109,24 +109,24 @@ body {
 }
 
 .results-container {
-  position: absolute; /* Position it relative to the entire page */
-  top: 20px; /* Adjust the distance from the top */
-  right: 20px; /* Adjust the distance from the right */
-  background-color: rgba(34, 34, 34, 0.9); /* Semi-transparent background */
-  border-radius: 10px; /* Rounded corners */
-  padding: 15px; /* Add some padding */
-  color: #fff; /* White text */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Soft shadow for a floating effect */
-  z-index: 100; /* Ensure it appears above other elements */
-  max-width: 300px; /* Limit the box width */
+  position: absolute; 
+  top: 20px; 
+  right: 20px; 
+  background-color: rgba(34, 34, 34, 0.9); 
+  border-radius: 10px; 
+  padding: 15px; 
+  color: #fff; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+  z-index: 100;
+  max-width: 300px; 
 }
 
 .results-container h3 {
-  margin: 0 0 10px; /* Adjust spacing around the heading */
-  font-size: 18px; /* Set heading size */
+  margin: 0 0 10px; 
+  font-size: 18px; 
 }
 
 .results-container p {
-  margin: 5px 0; /* Adjust spacing between lines */
-  font-size: 14px; /* Set font size */
+  margin: 5px 0; 
+  font-size: 14px; 
 }

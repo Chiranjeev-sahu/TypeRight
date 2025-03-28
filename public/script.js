@@ -40,13 +40,13 @@ const TypeRight = {
       .map((char) => `<span>${char}</span>`)
       .join("");
 
-    this.typedText = ""; // Reset typed text
+    this.typedText = ""; 
     this.elements.userInput.value = "";
     this.elements.userInput.disabled = false;
     this.elements.userInput.focus();
-    this.startTime = Date.now(); // Record the start time
-    this.isCompleted = false; // Reset completion flag
-    this.resetChart(); // Clear previous data from the chart
+    this.startTime = Date.now();
+    this.isCompleted = false; 
+    this.resetChart(); 
   },
 
   handleInput(e) {
@@ -57,9 +57,9 @@ const TypeRight = {
     const key = e.key;
 
     if (key === "Backspace") {
-      this.typedText = this.typedText.slice(0, -1); // Remove last character
+      this.typedText = this.typedText.slice(0, -1); 
     } else if (key.length === 1) {
-      this.typedText += key; // Add valid key
+      this.typedText += key; 
     }
 
     this.updateFeedback();
@@ -67,7 +67,7 @@ const TypeRight = {
     if (this.typedText.length >= this.originalSentence.length) {
       this.completeSession();
     } else {
-      this.updateMetrics(); // Update WPM and accuracy
+      this.updateMetrics(); 
     }
   },
 
@@ -90,7 +90,7 @@ const TypeRight = {
   },
 
   updateMetrics() {
-    const elapsedTime = (Date.now() - this.startTime) / 1000 / 60; // Convert to minutes
+    const elapsedTime = (Date.now() - this.startTime) / 1000 / 60;
     const wordCount = this.typedText.split(" ").length;
     const wpm = Math.floor(wordCount / elapsedTime);
   
@@ -98,7 +98,6 @@ const TypeRight = {
       .split("")
       .filter((char, index) => char === this.originalSentence[index]).length;
     
-    // New accuracy calculation
     const totalTypedChars = Math.min(this.typedText.length, this.originalSentence.length);
     const accuracy = totalTypedChars > 0 
       ? Math.floor((correctChars / totalTypedChars) * 100)
@@ -127,7 +126,7 @@ const TypeRight = {
     this.chartInstance = new Chart(ctx, {
       type: "line",
       data: {
-        labels: [], // Time intervals or typing stages
+        labels: [], 
         datasets: [
           {
             label: "Words Per Minute (WPM)",
@@ -168,13 +167,13 @@ const TypeRight = {
   },
 
   updateChart(wpm, accuracy) {
-    const timestamp = (Date.now() - this.startTime) / 1000; // Elapsed time in seconds
+    const timestamp = (Date.now() - this.startTime) / 1000; 
 
-    this.chartInstance.data.labels.push(timestamp.toFixed(1)); // Add timestamp
-    this.chartInstance.data.datasets[0].data.push(wpm); // Add WPM
-    this.chartInstance.data.datasets[1].data.push(accuracy); // Add accuracy
+    this.chartInstance.data.labels.push(timestamp.toFixed(1)); 
+    this.chartInstance.data.datasets[0].data.push(wpm); 
+    this.chartInstance.data.datasets[1].data.push(accuracy); 
 
-    this.chartInstance.update(); // Refresh chart
+    this.chartInstance.update(); 
   },
 
   resetChart() {
@@ -198,7 +197,7 @@ const TypeRight = {
     // Smooth transition
     resultsContainer.style.opacity = 0;
     setTimeout(() => {
-      resultsContainer.style.transition = "opacity 0.5s ease";
+      resultsContainer.style.transition = "opacity 1.5s ease";
       resultsContainer.style.opacity = 1;
     }, 100);
     this.elements.startButton.textContent='Restart';
