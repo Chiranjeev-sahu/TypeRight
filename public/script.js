@@ -29,6 +29,7 @@ const TypeRight = {
   
 
   async startSession() {
+    this.elements.startButton.textContent='Start';
     this.originalSentence = await this.getSentence();
     this.elements.wordsContainer.innerHTML = this.originalSentence
       .split("")
