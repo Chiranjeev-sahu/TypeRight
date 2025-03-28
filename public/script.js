@@ -29,6 +29,10 @@ const TypeRight = {
   
 
   async startSession() {
+    const existingResultsContainer = document.querySelector('.results-container');
+    if (existingResultsContainer) {
+      existingResultsContainer.remove();
+    }
     this.elements.startButton.textContent='Start';
     this.originalSentence = await this.getSentence();
     this.elements.wordsContainer.innerHTML = this.originalSentence
@@ -89,15 +93,20 @@ const TypeRight = {
     const elapsedTime = (Date.now() - this.startTime) / 1000 / 60; // Convert to minutes
     const wordCount = this.typedText.split(" ").length;
     const wpm = Math.floor(wordCount / elapsedTime);
-
+  
     const correctChars = this.typedText
       .split("")
       .filter((char, index) => char === this.originalSentence[index]).length;
-    const accuracy = Math.floor((correctChars / this.originalSentence.length) * 100);
-
+    
+    // New accuracy calculation
+    const totalTypedChars = Math.min(this.typedText.length, this.originalSentence.length);
+    const accuracy = totalTypedChars > 0 
+      ? Math.floor((correctChars / totalTypedChars) * 100)
+      : 0;
+  
     this.dataPoints.wpm.push(wpm);
     this.dataPoints.accuracy.push(accuracy);
-
+  
     this.updateChart(wpm, accuracy);
   },
 
